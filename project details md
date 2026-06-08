@@ -1,0 +1,130 @@
+# Development of Sensor for Detection of Microplastics
+
+## 1. Approved Project Title
+
+**Development of Sensor for Detection of Microplastics**
+
+## 2. Problem Statement
+
+Microplastics are tiny plastic particles that contaminate water bodies and pose serious risks to aquatic ecosystems and human health. Existing detection methods are often expensive, time-consuming, and require specialized laboratory equipment. Therefore, a cost-effective and efficient sensor-based system is needed to detect microplastics in water samples.
+
+## 3. Project Objectives
+
+* To identify the presence of microplastics in water samples.
+* To develop a sensor-based detection system.
+* To analyze water quality using collected sensor data.
+* To provide accurate and reliable detection results.
+* To support environmental monitoring and pollution control.
+
+## 4. Module List
+
+### Module 1: Data Collection
+
+* Collection of water samples.
+* Recording sample information.
+
+### Module 2: Sensor Data Acquisition
+
+* Reading sensor values.
+* Capturing particle-related measurements.
+
+### Module 3: Data Processing
+
+* Processing collected sensor data.
+* Filtering and analyzing readings.
+
+### Module 4: Microplastic Detection
+
+* Identifying microplastic presence.
+* Estimating contamination levels.
+
+### Module 5: Report Generation
+
+* Displaying results.
+* Generating reports and summaries.
+
+## 5. Use Case Diagram Submission
+
+### Actors
+
+* Researcher
+* Environmental Analyst
+* Administrator
+
+### Use Cases
+
+* Collect Water Sample
+* Upload Data
+* Detect Microplastics
+* Analyze Results
+* Generate Reports
+* Monitor Water Quality
+
+## 6. Table List
+
+### WaterSample
+
+| Field Name      | Data Type |
+| --------------- | --------- |
+| Sample_ID       | INT       |
+| Location        | VARCHAR   |
+| Collection_Date | DATE      |
+| Water_Source    | VARCHAR   |
+
+### SensorData
+
+| Field Name     | Data Type |
+| -------------- | --------- |
+| Sensor_ID      | INT       |
+| Sample_ID      | INT       |
+| Reading_Value  | FLOAT     |
+| Detection_Time | DATETIME  |
+
+### DetectionResult
+
+| Field Name         | Data Type |
+| ------------------ | --------- |
+| Result_ID          | INT       |
+| Sample_ID          | INT       |
+| Microplastic_Level | FLOAT     |
+| Status             | VARCHAR   |
+
+### User
+
+| Field Name | Data Type |
+| ---------- | --------- |
+| User_ID    | INT       |
+| User_Name  | VARCHAR   |
+| Role       | VARCHAR   |
+
+## 7. ER Diagram
+
+### Entities
+
+1. User
+2. WaterSample
+3. SensorData
+4. DetectionResult
+
+### Relationships
+
+* User collects WaterSample.
+* WaterSample generates SensorData.
+* SensorData produces DetectionResult.
+* User views DetectionResult.
+
+```text
+User
+  |
+  | Collects
+  |
+WaterSample
+  |
+  | Generates
+  |
+SensorData
+  |
+  | Produces
+  |
+DetectionResult
+```

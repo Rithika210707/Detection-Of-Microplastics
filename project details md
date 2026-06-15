@@ -128,50 +128,33 @@ SensorData
   |
 DetectionResult
 
-```
-# Day-wise Project Progress
-
-## Project Title
-
-**Development of Sensor for Detection of Microplastics**
-
 ---
 
-## 8: Database Schema Creation
+### 8: Database Schema Creation
 
-A database schema was designed to organize and manage the project data efficiently. The schema includes the required tables, attributes, and relationships for storing sensor readings, user details, and microplastic detection records. This structure ensures data consistency and easy retrieval.
+The database schema was designed to efficiently store and manage the project data related to microplastic detection. The schema includes tables for user information, sensor details, detection records, sample information, and system logs. Proper relationships between the tables were established to maintain data integrity and support future system expansion.
 
----
+### 9: UI Wireframe Design
 
-##  9: UI Wireframe Design
+Basic wireframes were created to visualize the structure and workflow of the application. The wireframes included layouts for the login page, dashboard, navigation panel, data entry forms, and result display screens. These designs served as a blueprint for the user interface development process.
 
-Initial wireframes were created to visualize the layout and flow of the application. The wireframes represent the placement of major components such as the login page, dashboard, navigation menu, and data entry forms before the actual development process.
+### 10: Login & Dashboard UI Design
 
----
+The user interface for the login page and dashboard was designed using modern design principles. The login page provides secure user authentication, while the dashboard offers an overview of sensor status, microplastic detection results, recent activities, and important system metrics in a user-friendly manner.
 
-## 10: Login & Dashboard UI Design
+### 11: Navigation & Form Design
 
-The user interface for the login page and dashboard was designed. The login page focuses on simplicity and user authentication, while the dashboard provides an overview of sensor data, detection results, and key system functionalities.
+Navigation menus and data input forms were designed to improve accessibility and ease of use. The navigation structure enables users to move smoothly between different sections of the application. Forms were developed to collect sample details, sensor readings, and user inputs efficiently with proper validation considerations.
 
----
+### 12: Design Review
 
-## 11: Navigation & Form Design
+A detailed review of the proposed designs was conducted to evaluate functionality, usability, and consistency. Feedback was gathered and necessary modifications were identified to enhance the overall user experience and ensure that the design aligns with the project objectives and requirements.
 
-Navigation elements and data entry forms were designed to improve usability. The navigation structure enables users to move easily between different sections of the application, and the forms were created for efficient input and management of project-related information.
+### 13: Frontend Environment Setup
 
----
+The frontend development environment was successfully configured by installing the necessary tools, frameworks, libraries, and dependencies. The project structure was organized, version control support was established, and the environment was prepared for the implementation of the application interface.
 
-## 12: Design Review
 
-A comprehensive review of the proposed designs was conducted to identify improvements and ensure alignment with project objectives. Feedback was incorporated to enhance the user experience, consistency, and overall effectiveness of the system design.
-
----
-
-##  13: Frontend Environment Setup
-
-The frontend development environment was successfully configured. Required tools, libraries, and dependencies were installed to establish a stable foundation for the implementation of the user interface and future development activities.
-
----
 
 
 

@@ -127,4 +127,51 @@ SensorData
   | Produces
   |
 DetectionResult
+
 ```
+# Day-wise Project Progress
+
+## Project Title
+
+**Development of Sensor for Detection of Microplastics**
+
+---
+
+## 8: Database Schema Creation
+
+A database schema was designed to organize and manage the project data efficiently. The schema includes the required tables, attributes, and relationships for storing sensor readings, user details, and microplastic detection records. This structure ensures data consistency and easy retrieval.
+
+---
+
+##  9: UI Wireframe Design
+
+Initial wireframes were created to visualize the layout and flow of the application. The wireframes represent the placement of major components such as the login page, dashboard, navigation menu, and data entry forms before the actual development process.
+
+---
+
+## 10: Login & Dashboard UI Design
+
+The user interface for the login page and dashboard was designed. The login page focuses on simplicity and user authentication, while the dashboard provides an overview of sensor data, detection results, and key system functionalities.
+
+---
+
+## 11: Navigation & Form Design
+
+Navigation elements and data entry forms were designed to improve usability. The navigation structure enables users to move easily between different sections of the application, and the forms were created for efficient input and management of project-related information.
+
+---
+
+## 12: Design Review
+
+A comprehensive review of the proposed designs was conducted to identify improvements and ensure alignment with project objectives. Feedback was incorporated to enhance the user experience, consistency, and overall effectiveness of the system design.
+
+---
+
+##  13: Frontend Environment Setup
+
+The frontend development environment was successfully configured. Required tools, libraries, and dependencies were installed to establish a stable foundation for the implementation of the user interface and future development activities.
+
+---
+
+
+

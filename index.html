@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Microplastics Detection</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            width: 500px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        h1 { color: #2c3e50; margin-bottom: 10px; }
+        p { color: #7f8c8d; margin-bottom: 20px; }
+        .upload-area {
+            border: 3px dashed #667eea;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 15px;
+            background: #f8f9ff;
+        }
+        input[type="file"] { margin: 10px 0; }
+        button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .links { margin-top: 15px; }
+        .links a { color: #667eea; display: block; margin: 5px 0; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔬 Microplastics Detection System</h1>
+        <p>Upload a water sample image to detect microplastics</p>
+        <form action="/analyze" method="POST" enctype="multipart/form-data">
+            <div class="upload-area">
+                <span style="font-size:40px;">💧</span>
+                <p>Choose Water Sample Image</p>
+                <input type="file" name="image" accept="image/*" required>
+            </div>
+            <button type="submit">🔍 Analyze Sample</button>
+        </form>
+        <div class="links">
+            <a href="/about">📋 About This Project</a>
+            <a href="/history">📊 Detection History</a>
+            <a href="/logout" style="color:red;">🚪 Logout</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detection Result</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            width: 500px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        h1 { color: #2c3e50; margin-bottom: 20px; }
+        .count { font-size: 48px; font-weight: bold; color: #2c3e50; }
+        .high { color: red; font-size: 24px; font-weight: bold; }
+        .moderate { color: orange; font-size: 24px; font-weight: bold; }
+        .low { color: green; font-size: 24px; font-weight: bold; }
+        img { width: 280px; border-radius: 10px; margin: 20px 0; }
+        .sensor-box {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            background: #f8f9ff;
+            border-radius: 10px;
+            padding: 15px;
+        }
+        .sensor-item { text-align: center; }
+        .sensor-item h3 { color: #667eea; font-size: 18px; }
+        .sensor-item p { color: #2c3e50; font-size: 14px; }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin: 5px;
+        }
+        canvas { margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔬 Detection Result</h1>
+        <p class="count">{{ count }}</p>
+        <p style="color:#7f8c8d;">Microplastics Detected</p>
+        <br>
+        <p class="{{ level|lower }}">⚠️ Risk Level: {{ level }}</p>
+        <br>
+        <img src="/static/uploads/{{ filename }}">
+
+        <div class="sensor-box">
+            <div class="sensor-item">
+                <h3>🌡️ {{ temperature }}°C</h3>
+                <p>Temperature</p>
+            </div>
+            <div class="sensor-item">
+                <h3>💧 {{ ph }}</h3>
+                <p>pH Level</p>
+            </div>
+            <div class="sensor-item">
+                <h3>🌊 {{ turbidity }}</h3>
+                <p>Turbidity</p>
+            </div>
+        </div>
+
+        <canvas id="myChart" width="400" height="200"></canvas>
+        <br>
+        <a href="/download/{{ count }}/{{ level }}" class="btn" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">📄 Download Report</a>
+        <a href="/" class="btn">🔙 Analyze Another</a>
+    </div>
+    <script>
+        const count = {{ count }};
+        const safe = 100 - count;
+        const ctx = document.getElementById('myChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Microplastics', 'Safe Water', 'Low', 'Moderate', 'High'],
+                datasets: [{
+                    label: 'Detection Analysis',
+                    data: [count, safe, 15, 30, 50],
+                    backgroundColor: ['#e74c3c', '#2ecc71', '#2ecc71', '#f39c12', '#e74c3c'],
+                    borderRadius: 8
+                }]
+            },
+            options: { responsive: true, plugins: { legend: { display: false } } }
+        });
+    </script>
+</body>
+</html>

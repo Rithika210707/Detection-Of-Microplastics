@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            width: 400px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        h1 { color: #2c3e50; margin-bottom: 10px; }
+        p { color: #7f8c8d; margin-bottom: 30px; }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+        input:focus { border-color: #667eea; outline: none; }
+        button {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .error { color: red; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔬 Microplastics Detection</h1>
+        <p>Login to continue</p>
+        <input type="text" name="username" placeholder="Username" id="username">
+        <input type="password" name="password" placeholder="Password" id="password">
+        <button onclick="doLogin()">🔐 Login</button>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+        <p style="margin-top:15px; font-size:12px; color:#999;">Default: admin / admin123</p>
+    </div>
+    <script>
+        function doLogin() {
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = '/login';
+            const u = document.createElement('input');
+            u.name = 'username';
+            u.value = document.getElementById('username').value;
+            const p = document.createElement('input');
+            p.name = 'password';
+            p.value = document.getElementById('password').value;
+            form.appendChild(u);
+            form.appendChild(p);
+            document.body.appendChild(form);
+            form.submit();
+        }
+    </script>
+</body>
+</html>

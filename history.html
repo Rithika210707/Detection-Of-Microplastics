@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detection History</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 700px;
+            margin: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 { color: #2c3e50; text-align: center; margin-bottom: 30px; }
+        table { width: 100%; border-collapse: collapse; }
+        th { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 12px; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid #eee; }
+        tr:hover { background: #f8f9ff; }
+        .high { color: red; font-weight: bold; }
+        .moderate { color: orange; font-weight: bold; }
+        .low { color: green; font-weight: bold; }
+        .btn {
+            display: block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Detection History</h1>
+        <table>
+            <tr>
+                <th>#</th>
+                <th>File</th>
+                <th>Count</th>
+                <th>Risk Level</th>
+                <th>Date</th>
+            </tr>
+            {% for d in detections %}
+            <tr>
+                <td>{{ d.id }}</td>
+                <td>{{ d.filename }}</td>
+                <td>{{ d.count }}</td>
+                <td class="{{ d.level|lower }}">{{ d.level }}</td>
+                <td>{{ d.date.strftime('%d-%m-%Y %H:%M') }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/" class="btn">🔙 Back to Home</a>
+    </div>
+</body>
+</html>
